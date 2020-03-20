@@ -1,0 +1,22 @@
+<div style="margin-top: 50px;">
+    <form [formGroup]="form">
+        <div class="form-group">            
+            <label>Nome: </label>
+            <input class="form-control" type="text" formControlName="nome">
+            <br>
+        </div>
+        <div class="form-group">
+            <label>Categoria: </label>
+            <input class="form-control" type="text" formControlName="categoria">
+            <br>
+        </div>
+        <div class="form-group">
+            <label>Preço: </label>
+            <input class="form-control" type="text" formControlName="preco">
+            <br>
+        </div>
+        <button class="btn btn-primary" [disabled]="form.invalid" (click)="add()">SALVAR</button>
+        <button class="btn" routerLink="/">VOLTAR</button>
+    </form>
+</div>
+

@@ -1,0 +1,29 @@
+<div class="card mt-3">
+    <div class="card-header">
+        <div class="float-left">
+          <h4>Produtos</h4>
+        </div>
+        <div class="float-right">
+            <button class="btn" routerLink="/categorias" routerLinkActive="active"> VOLTAR </button>
+            <button class="btn btn-primary" routerLink="/addcategoria" routerLinkActive="active"> ADICIONAR </button>
+        </div>
+      </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Categoria</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let categoria of categoria">
+                    <td>{{ categoria.id }}</td>
+                    <td>{{ categoria.categoria }}</td>
+                    <td><span class="float-right"> <button class="btn btn-outline-warning mb-1 btn-sm" (click)="editar(categoria.id)">EDITAR</button> <button class="btn btn-outline-danger mb-1 btn-sm" (click)="remove(categoria)">REMOVER</button> </span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

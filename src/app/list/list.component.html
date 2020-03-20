@@ -1,0 +1,83 @@
+<div class="card mt-3">
+    <div class="card-header">
+        <div class="float-left">
+          <h4>Produtos</h4>
+        </div>
+        <div class="float-right">
+            <button class="btn btn-primary" style="margin-right: 10px;" routerLink="/adicionar" routerLinkActive="active"> ADICIONAR </button>
+            <button class="btn btn-primary" routerLink="/categoria" routerLinkActive="active"> CATEGORIA </button>
+        </div>
+      </div>
+    <div class="card-body">
+        <table class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                </tr>
+                <tr *ngFor="let produtos of produtos">
+                    <td>{{ produtos.id }}</td>
+                    <td>{{ produtos.nome }}</td>
+                    <td>{{ produtos.categoria }}</td>
+                    <td><span class="float-right"> <button class="btn btn-outline-warning mb-1 btn-sm" (click)="editar(produtos.id)">EDITAR</button> <button class="btn btn-outline-danger mb-1 btn-sm" (click)="remove(produtos)">REMOVER</button> </span></td>
+                </tr>
+        </table>
+    </div>
+</div>
+
+<!--
+  <div class="card mt-3">
+    <div class="card-header">
+      <div class="float-left">
+        <h4>Cursos</h4>
+      </div>
+      <div class="float-right">
+        <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo Curso</button>
+        <button type="button" class="btn btn-secondary">Atualizar</button>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Produtos</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produtos of produtos">
+            <td>{{ produto.titulo }}</td>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.categoria }}</td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(produto.id)">
+                  Atualizar
+                </button>
+  
+                <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(prouto)">
+                  Remover
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <ng-template #loading>
+        <span>Carregando Cursos...</span>
+      </ng-template>
+  
+      -ng-template #loadingError>
+        <div *ngIf="error$ | async; else loading" >
+          Erro ao carregar cursos. Tente novamente mais tarde.
+        </div>
+        <ng-template #loading>
+            <span>Carregando Cursos...</span>
+        </ng-template>
+      </ng-template
+    </div>
+  </div>
+  -->
